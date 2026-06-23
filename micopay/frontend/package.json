@@ -24,6 +24,7 @@
     "@capacitor/ios": "^8.3.4",
     "@capacitor/push-notifications": "^8.1.0",
     "@capacitor/status-bar": "^8.0.2",
+    "@stellar/stellar-sdk": "^13.3.0",
     "axios": "^1.13.6",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
