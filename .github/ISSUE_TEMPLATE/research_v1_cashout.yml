@@ -1,7 +1,7 @@
 name: "[Research] V-1 · Cash-out context"
 description: "No code, no PR. Share your experience turning digital money into physical cash. Privacy-first."
 title: "[Research] Cash-out — <your region>"
-labels: ["research"]
+labels: ["research", "complexity: low", "wave:docs", "Stellar Wave"]
 body:
   - type: markdown
     attributes:

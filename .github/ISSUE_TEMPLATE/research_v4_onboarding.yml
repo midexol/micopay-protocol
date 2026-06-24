@@ -1,7 +1,7 @@
 name: "[Research] V-4 · Non-custodial wallet onboarding"
 description: "No code, no PR. Does the create/import + backup flow make sense to you? Privacy-first."
 title: "[Research] Onboarding — <your region>"
-labels: ["research"]
+labels: ["research", "complexity: low", "wave:docs", "Stellar Wave"]
 body:
   - type: markdown
     attributes:

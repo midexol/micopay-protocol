@@ -1,7 +1,7 @@
 name: "[Research] V-5 · Trust in the cash-in/cash-out flow"
 description: "No code, no PR. Would you trust picking a provider, seeing the fee, using a QR/receipt? Privacy-first."
 title: "[Research] Flow trust — <your region>"
-labels: ["research"]
+labels: ["research", "complexity: low", "wave:docs", "Stellar Wave"]
 body:
   - type: markdown
     attributes:

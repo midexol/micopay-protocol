@@ -1,7 +1,7 @@
 name: "[Research] V-3 · Liquidity provider perspective"
 description: "No code, no PR. Would you act as a liquidity provider (the human cash point)? Privacy-first."
 title: "[Research] Liquidity provider — <your region>"
-labels: ["research"]
+labels: ["research", "complexity: low", "wave:docs", "Stellar Wave"]
 body:
   - type: markdown
     attributes:
