@@ -86,8 +86,13 @@ Fill these in as answers arrive. Keep counts and percentages only.
 
 ## Aggregate findings (one `### V-X` section per contributor PR)
 
-### V-1 · Cash-out context
-_(no responses yet)_
+### V-1 · Cash-out 
+* Country / Region: Nigeria (South West)
+* Cash-out frequency: Weekly
+* Current method: Peer-to-peer exchange or bank transfer to a local bank account, followed by ATM withdrawal or cash-out through a POS agent.
+* Main friction: High cumulative transaction fees, unreliable ATM availability, and daily withdrawal limits.
+* Personal experience: I frequently receive digital funds and need physical cash for everyday expenses such as transportation and purchases at local markets. One recent experience was particularly frustrating, I spent more than an hour moving between three different bank locations because the first two had either empty ATMs or network issues. When I finally found a working ATM, the withdrawal limit was so low that I had to make multiple transactions, resulting in additional bank charges.
+
 
 ### V-2 · Cash-in / deposit context
 _(no responses yet)_
