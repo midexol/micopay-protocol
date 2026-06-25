@@ -167,17 +167,16 @@ Las respuestas ya abarcan 6 países en 3 continentes (LATAM, Sur de Asia, Áfric
 
 ## Qué falta
 
-| Issue | Asignado a | PR | Prioridad para el caso SDF |
+| Issue | Asignado a | PR | Estado |
 |-------|-----------|----|-----------------------------|
-| V-1 · Demanda de cash-out | [@larryjay007](https://github.com/larryjay007) | Sin PR aún | 🔴 Crítico — señal central de demanda |
-| V-2 · Contexto de cash-in / depósito | [@Truphile](https://github.com/Truphile) | Sin PR aún | 🔴 Crítico — demanda bidireccional |
+| V-1 · Demanda de cash-out | [@larryjay007](https://github.com/larryjay007) | [#155](https://github.com/ericmt-98/micopay-protocol/pull/155) ✅ | Mergeado — Nigeria (Sur Oeste) |
+| V-2 · Contexto de cash-in / depósito | [@Truphile](https://github.com/Truphile) | [#159](https://github.com/ericmt-98/micopay-protocol/pull/159) ✅ | Mergeado — Nigeria (África Occidental) |
 | V-3 · Perspectiva del proveedor de liquidez | [@3m1n3nc3](https://github.com/3m1n3nc3) | Sin PR aún | 🔴 Crítico — lado de la oferta del mercado |
-| V-4 · Onboarding a wallet no-custodial | [@Shadow-MMN](https://github.com/Shadow-MMN) | Sin PR aún | 🟡 Importante — argumento de usabilidad de Stellar |
-| V-5 · Confianza en el flujo | [@Truphile](https://github.com/Truphile) | Sin PR aún | 🟡 Importante — PMF y riesgo de abandono |
+| V-4 · Onboarding a wallet no-custodial | [@Shadow-MMN](https://github.com/Shadow-MMN) | [#157](https://github.com/ericmt-98/micopay-protocol/pull/157) ✅ | Mergeado |
+| V-5 · Confianza en el flujo | [@Truphile](https://github.com/Truphile) | [#158](https://github.com/ericmt-98/micopay-protocol/pull/158) ✅ | Mergeado — Nigeria (África Occidental) |
 
-> V-1, V-2 y V-3 son la prioridad más alta. Sin al menos una respuesta en primera persona para cada uno,
-> la narrativa ante la SDF carece de sus dos argumentos más fundamentales: que la gente necesita esto
-> (demanda) y que alguien lo proveería (oferta).
+> V-3 es la brecha crítica restante. Sin una perspectiva en primera persona del proveedor de liquidez,
+> el lado de la oferta de la narrativa ante la SDF queda sin sustento.
 
 ---
 

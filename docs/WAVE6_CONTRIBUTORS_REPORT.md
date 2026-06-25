@@ -167,17 +167,16 @@ Responses now span 6 countries across 3 continents (LATAM, South Asia, Africa). 
 
 ## What's still missing
 
-| Issue | Assignee | PR | Priority for SDF case |
+| Issue | Assignee | PR | Status |
 |-------|----------|----|-----------------------|
-| V-1 · Cash-out demand | [@larryjay007](https://github.com/larryjay007) | None yet | 🔴 Critical — core demand signal |
-| V-2 · Cash-in / deposit context | [@Truphile](https://github.com/Truphile) | None yet | 🔴 Critical — bidirectional demand |
+| V-1 · Cash-out demand | [@larryjay007](https://github.com/larryjay007) | [#155](https://github.com/ericmt-98/micopay-protocol/pull/155) ✅ | Merged — Nigeria (South West) |
+| V-2 · Cash-in / deposit context | [@Truphile](https://github.com/Truphile) | [#159](https://github.com/ericmt-98/micopay-protocol/pull/159) ✅ | Merged — Nigeria (West Africa) |
 | V-3 · Liquidity provider perspective | [@3m1n3nc3](https://github.com/3m1n3nc3) | None yet | 🔴 Critical — supply side of the market |
-| V-4 · Non-custodial wallet onboarding | [@Shadow-MMN](https://github.com/Shadow-MMN) | None yet | 🟡 Important — Stellar usability claim |
-| V-5 · Trust in the flow | [@Truphile](https://github.com/Truphile) | None yet | 🟡 Important — PMF / drop-off risk |
+| V-4 · Non-custodial wallet onboarding | [@Shadow-MMN](https://github.com/Shadow-MMN) | [#157](https://github.com/ericmt-98/micopay-protocol/pull/157) ✅ | Merged |
+| V-5 · Trust in the flow | [@Truphile](https://github.com/Truphile) | [#158](https://github.com/ericmt-98/micopay-protocol/pull/158) ✅ | Merged — Nigeria (West Africa) |
 
-> V-1, V-2 and V-3 are the highest priority. Without at least one first-person response for each,
-> the SDF narrative lacks its two most fundamental claims: that people need this (demand) and
-> that someone would provide it (supply).
+> V-3 is the remaining critical gap. Without a first-person liquidity-provider perspective,
+> the supply side of the SDF narrative is unsubstantiated.
 
 ---
 

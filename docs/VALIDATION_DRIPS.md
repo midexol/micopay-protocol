@@ -86,24 +86,38 @@ Fill these in as answers arrive. Keep counts and percentages only.
 
 ## Aggregate findings (one `### V-X` section per contributor PR)
 
-### V-1 · Cash-out 
-* Country / Region: Nigeria (South West)
-* Cash-out frequency: Weekly
-* Current method: Peer-to-peer exchange or bank transfer to a local bank account, followed by ATM withdrawal or cash-out through a POS agent.
-* Main friction: High cumulative transaction fees, unreliable ATM availability, and daily withdrawal limits.
-* Personal experience: I frequently receive digital funds and need physical cash for everyday expenses such as transportation and purchases at local markets. One recent experience was particularly frustrating, I spent more than an hour moving between three different bank locations because the first two had either empty ATMs or network issues. When I finally found a working ATM, the withdrawal limit was so low that I had to make multiple transactions, resulting in additional bank charges.
+### V-1 · Cash-out context
+**Contributor:** [@larryjay007](https://github.com/larryjay007) · **PR:** [#155](https://github.com/ericmt-98/micopay-protocol/pull/155) · **Region:** Nigeria (South West)
+
+First-person response (privacy-safe):
+
+- **Country / region:** Nigeria (South West)
+- **Cash-out frequency:** Weekly
+- **Current method:** Peer-to-peer exchange or bank transfer to a local bank account, followed by ATM withdrawal or cash-out through a POS agent.
+- **Main friction:** High cumulative transaction fees, unreliable ATM availability, and daily withdrawal limits.
+- **Personal experience:** I frequently receive digital funds and need physical cash for everyday expenses such as transportation and purchases at local markets. One recent experience was particularly frustrating — I spent more than an hour moving between three different bank locations because the first two had either empty ATMs or network issues. When I finally found a working ATM, the withdrawal limit was so low that I had to make multiple transactions, resulting in additional bank charges.
+
+**SDF narrative:** Adds Nigeria (South West) to the cash-out demand signal for Claim 1. Weekly frequency + ATM reliability failures + daily withdrawal limits combine into a strong recurring pain that a local P2P agent network directly addresses.
 
 ### V-2 · Cash-in / deposit context
+**Contributor:** [@Truphile](https://github.com/Truphile) · **PR:** [#159](https://github.com/ericmt-98/micopay-protocol/pull/159) · **Region:** Nigeria (West Africa)
 
-_(no responses yet)_
+First-person response (privacy-safe):
+
+- **Why I'd use cash-in:** Getting paper money out of my hands and into my phone where it's actually useful. If I collect cash from a friend or an offline gig, I can't use that paper to pay for AWS bills, local utility tokens, or fund a fintech savings pocket. I need a quick way to drop the cash and see it hit my digital wallet instantly.
+- **Current method:** I walk up to a nearby neighborhood PoS agent. I hand them the physical cash, give them my account details, and wait for them to do a transfer to my wallet on their terminal.
+- **Frequency:** A few times a month — whenever paper cash piles up, I need to clear it out.
+- **Trust barrier:** Network issues, hands down. The fear of handing over cold hard cash and then hearing the agent say "Network is bad, the money hasn't dropped yet." If the system crashes mid-operation, you're stuck arguing at a kiosk, waiting for a network reversal that could take 24–48 hours.
+- **Local trusted providers:** Yes. There are established, branded kiosks and shops right on my street that have been there for years. Everyone in the area uses them, and because they are tied to a permanent physical location, they can't afford to ruin their reputation over a bad transaction.
+
+**SDF narrative:** Confirms bidirectional demand (Claim 1) from West Africa — a user who actively needs to digitize physical cash and already trusts local PoS agents. The main risk to address is mid-operation network failure and confirmation latency.
 
 ### V-3 · Liquidity provider perspective
 
 _(no responses yet)_
 
 ### V-4 · Non-custodial wallet onboarding
-
-**Contributor:** Shadow-MMN
+**Contributor:** [@Shadow-MMN](https://github.com/Shadow-MMN) · **PR:** [#157](https://github.com/ericmt-98/micopay-protocol/pull/157) · **Region:** —
 
 - **Is it clear to YOU that you hold the key and must back it up?:** Not clear at all. There is no onboarding screen or maybe I am missing something but the keypair was generated (I found out by checking the brower's localStorage).
 - **Your biggest doubt or fear about a non-custodial wallet:** Losing the key to a hacker since it is stored on my localStorage.
@@ -112,69 +126,22 @@ _(no responses yet)_
 - **In your view, should backing up the key be mandatory at sign-up, or optional? (and why):** Optional, but the UI should make it trivially easy i.e a single tap to copy the key, accompanied by a visible note telling the user to save the copied text somewhere safe and never share it. Making it mandatory would frustrate users who just want to try the app, but the option should be prominent enough that nobody misses it.
 
 ### V-5 · Trust in the cash-in/cash-out flow
+**Contributor:** [@Truphile](https://github.com/Truphile) · **PR:** [#158](https://github.com/ericmt-98/micopay-protocol/pull/158) · **Region:** Nigeria (West Africa)
 
-_(no responses yet)_
+First-person response (privacy-safe):
+
+- **Most trusted provider type:** A well-established, branded neighborhood PoS agent with a permanent physical kiosk and a steady stream of daily customers. Seeing them use a dedicated, functional Android PoS terminal instantly builds confidence.
+- **Least trusted:** A mobile, unbranded agent sitting casually on the street corner with just a phone, or an untrusted shop owner who claims "network is bad" before even attempting the transaction.
+- **Minimum info before handing over cash:** The exact commission fee clearly stated upfront · the final locked-in value that will reflect in the wallet · a clear confirmation on the agent's screen showing the system is active and online.
+- **Verification signals for providers:** The agent's location and banner name matching exactly what is displayed on the in-app map · a verified merchant status indicator showing a high completion rate or a "Trusted Agent" badge.
+- **Support expectations mid-failure:** An immediate, automated SMS receipt or in-app "Pending / Money Received" status to prove the transaction is in flight · a clear WhatsApp support channel or toll-free line to resolve hanging transactions within minutes.
+- **Top reason to abandon:** "Network Issues" and delay — if the agent says "network is fluctuating" or the app takes too long to generate the QR code/receipt. Any delay at point of payment triggers a fear of trapped funds.
+
+**SDF narrative:** Directly maps the trust and abandonment signals for Claim 5 (Trust / PMF). The three-part "minimum info before handing over cash" is a concrete UX checklist — transparent fee, locked rate, online status — that the agent flow must display before cash changes hands.
 
 ### V-6 · Remittances cash-out context
 **Contributor:** [@KaruG1999](https://github.com/KaruG1999) · **PR:** [#146](https://github.com/ericmt-98/micopay-protocol/pull/146) · **Region:** Argentina (LATAM)
 
-<<<<<<< HEAD
-=======
-- **Country / general region:** Argentina (LATAM)
-- **Do YOU receive money from abroad?:** Yes
-- **How do you receive it today?:** Crypto (Stablecoins via Stellar/Soroban protocols and P2P networks) and global digital platforms.
-- **Your main friction receiving + cashing it out:** Fee and trust. Standard international banking wires trigger excessive regulatory friction, high baseline inbound fees, and unfavorable official currency conversion rates. While crypto solves cross-border speed, cashing out stablecoins to local fiat (ARS) still relies heavily on localized P2P order books or physical over-the-counter (OTC) exchanges, introducing variable spread fees and counterparty trust risks.
-- **Would getting it as cash nearby, same day, help YOU?:** Yes. Eliminating the P2P counterparty matching phase and having an immediate, compliant, same-day physical cash-out point nearby would drastically reduce transactional friction and eliminate exchange-rate slippage.
-
-### V-7 · Current alternatives & switching
-
-Small anonymized sample (N=4; self + 3 peers, convenience sample across Mexico and other Latin American regions):
-
-- Respondent A — Monterrey region, Mexico
-  - What they use today: OXXO stores and traditional bank ATMs.
-  - What they like: High availability and the security of established, well-known brands.
-  - What frustrates them: High transaction/convenience fees, long wait lines, and occasional ATM outages.
-  - What would make them switch: Lower fees, zero queue times, and local neighborhood exchange points.
-  - Dealbreaker: Upfront payment/fees before receiving cash, or overly complex apps that require advanced crypto/technical knowledge.
-
-- Respondent B — Bogotá area, Colombia
-  - What they use today: Mobile wallets (Nequi, Daviplata) and physical lottery kiosks (Efecty, Paga Todo) for cash-out.
-  - What they like: Instant digital transfers and wide physical availability of cash points.
-  - What frustrates them: Frequent app system outages, daily transaction limits, and high agent commissions.
-  - What would make them switch: A highly reliable system working 24/7 with transparent, lower fees and flexible limits.
-  - Dealbreaker: Lack of immediate transaction confirmation or lack of support channels to resolve stuck operations.
-
-- Respondent C — Buenos Aires, Argentina
-  - What they use today: Local informal exchange houses ("cuevas") and P2P crypto exchanges (Binance P2P).
-  - What they like: Inflation hedging by holding stablecoins (USDT) and converting to fiat cash as needed.
-  - What frustrates them: Safety risks of carrying physical cash from physical exchanges, and counterparty trust issues in online P2P.
-  - What would make them switch: A secure, trust-rated network of local merchants/providers for safe, local stablecoin-to-cash exchange.
-  - Dealbreaker: High platform service fees or mandatory KYC that requires multi-day validation for tiny transactions.
-
-- Respondent D — Caracas metropolitan area, Venezuela
-  - What they use today: Binance P2P, Pago Móvil bank transfers, and informal USD cash transactions.
-  - What they like: Fast digital payments (Pago Móvil) and holding USD-linked assets.
-  - What frustrates them: Scarcity of physical USD/local fiat cash and high exchange/broker fees (often >5%).
-  - What would make them switch: Direct connection to nearby verified cash providers at low transaction fees (<2%) with instant escrow settlement.
-  - Dealbreaker: High rate of transaction failures or lack of secure escrows to prevent loss/theft of digital assets during cash exchanges.
-
-Aggregate signal:
-
-- **Current alternatives:** Users rely heavily on established retail/agent networks (OXXO, Efecty), mobile wallets, and crypto P2P platforms (Binance) depending on the country's economic context.
-- **Key switching drivers:** Lower transaction fees, zero queues, higher system uptime (avoiding wallet outages), and safer/more localized physical exchange points.
-- **Key dealbreakers:** Escrow/security concerns (fear of losing funds), high entry friction (e.g. upfront payments or heavy KYC for small amounts), and poor app usability/technical complexity.
-
-### V-8 · Fair commission / fee tolerance
-
-- **Country / region:** Lagos area, Nigeria.
-- **Fair commission for cashing out:** 1–3% feels reasonable to me — enough to compensate a provider for their time and liquidity risk, but low enough that the convenience is still worth it over walking to a bank or agent.
-- **Too-high threshold:** Anything above 5% and I would rather deal with the friction of a traditional channel. At that point the fee starts to feel exploitative rather than a fair service charge.
-- **What would justify a higher fee:** Not having to use a bank account at all is the biggest one for me — that alone unlocks access. Speed (same-day settlement) and a clear safety guarantee (verified provider, in-app dispute path) would also make me willing to stretch a little above my usual ceiling.
-- **Would I pay more for a closer / faster provider:** Yes. If the alternative is travelling further or waiting longer, a small premium for proximity and speed is worth it.
-
-### V-9 · Safety meeting in person
-
->>>>>>> a84be11 (V-4: add non-custodial wallet onboarding response)
 First-person response (privacy-safe):
 
 - Do I receive money from abroad? Yes — via stablecoins on Stellar/Soroban and P2P networks.
