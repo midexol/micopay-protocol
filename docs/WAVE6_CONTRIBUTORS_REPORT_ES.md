@@ -27,9 +27,10 @@
 | [#169](https://github.com/ericmt-98/micopay-protocol/pull/169) | [@DevSolex](https://github.com/DevSolex) | #133 | V-3 · Perspectiva del proveedor de liquidez | Nigeria (África Occidental) | ✅ Mergeado |
 | [#171](https://github.com/ericmt-98/micopay-protocol/pull/171) | [@Jo-anny](https://github.com/Jo-anny) | #166 | V-13 · Contexto del remitente — envío al exterior | Europa → América Latina | ✅ Mergeado |
 | [#173](https://github.com/ericmt-98/micopay-protocol/pull/173) | [@Oluwasuyi-Timilehin](https://github.com/Oluwasuyi-Timilehin) | #165 | V-12 · Vida sin cuenta bancaria — gestión diaria de efectivo | México (CDMX) | ✅ Mergeado |
+| [#170](https://github.com/ericmt-98/micopay-protocol/pull/170) | [@Max-Owolabi](https://github.com/Max-Owolabi) | #167 | V-14 · Validación: modelo mental de stablecoin y peso digital | Nigeria (África Occidental) | ✅ Mergeado |
 
-**Total de respuestas: N=15** (V-1, V-2, V-3, V-4, V-5, V-12, V-13 en primera persona + 1 lote multi-respondente en V-10 + 3 primera persona V-6/V-8/V-9 + 3 implícitas en el lote de V-7)
-**Regiones representadas:** Nigeria (×4), México (×2), Colombia, Argentina, Venezuela, India, Europa
+**Total de respuestas: N=16** (V-1, V-2, V-3, V-4, V-5, V-12, V-13, V-14 en primera persona + 1 lote multi-respondente en V-10 + 3 primera persona V-6/V-8/V-9 + 3 implícitas en el lote de V-7)
+**Regiones representadas:** Nigeria (×5), México (×2), Colombia, Argentina, Venezuela, India, Europa
 
 ---
 
@@ -246,6 +247,25 @@ Cada contribución avanza uno o más de los cinco argumentos de nuestra narrativ
 
 ---
 
+### V-14 · Modelo mental de stablecoin y peso digital
+**Contribuidor:** [@Max-Owolabi](https://github.com/Max-Owolabi) · **PR:** [#170](https://github.com/ericmt-98/micopay-protocol/pull/170) · **Mergeado:** 2026-06-26
+
+**Formato:** Primera persona, respondente único.
+
+**Región:** Nigeria (África Occidental)
+
+**Hallazgos principales:**
+
+- **Experiencia previa con stablecoins:** Sí — USDC y USDT en Stellar y otras redes, obtenidos via agentes de cambio locales y plataformas P2P. Usados principalmente para protegerse de la inflación de la moneda local y pagar servicios digitales donde las tarjetas locales fallan.
+- **Modelo mental vs efectivo físico:** Inicialmente abstracto ("un número en pantalla"). La confianza se construyó por: posibilidad de reconversión a fiat, utilidad de pago global, seguridad del smart contract, transparencia de transacciones on-chain.
+- **Parte más difícil de entender:** Tarifas de gas/red, diferencias multichain del mismo token (Stellar vs Ethereum), gestión de claves de autocustodia sin soporte bancario para restablecimiento de contraseña.
+- **Reacción a "tus fondos están en una wallet digital":** Curiosidad + cautela — más seguro contra robo físico, pero teme hackeo digital o pérdida de claves sin opciones claras de recuperación.
+- **Detonador de equivalencia a efectivo:** Conversión instantánea garantizada a efectivo en cualquier tienda de barrio, sin tarifas altas, y confirmación visible del escrow in-app.
+
+**Aporte a la narrativa SDF:** Valida el Argumento 4 (Stellar es usable) desde un mercado inflacionario. Las stablecoins ya son valoradas como herramienta real en África Occidental — la brecha es la conversión de la última milla a efectivo y la UX de recuperación de claves, exactamente lo que el modelo de agente local + escrow de MicoPay resuelve.
+
+---
+
 ### V-3 · Perspectiva del proveedor de liquidez
 **Contribuidor:** [@DevSolex](https://github.com/DevSolex) · **PR:** [#169](https://github.com/ericmt-98/micopay-protocol/pull/169) · **Mergeado:** 2026-06-26
 
@@ -322,8 +342,9 @@ Las respuestas ya abarcan 6+ países en 3 continentes (LATAM, Sur de Asia, Áfri
 | V-5 · Confianza en el flujo | [@Truphile](https://github.com/Truphile) | [#158](https://github.com/ericmt-98/micopay-protocol/pull/158) ✅ | Mergeado — Nigeria (África Occidental) |
 | V-12 · Vida sin cuenta bancaria | [@Oluwasuyi-Timilehin](https://github.com/Oluwasuyi-Timilehin) | [#173](https://github.com/ericmt-98/micopay-protocol/pull/173) ✅ | Mergeado — México (CDMX) |
 | V-13 · Contexto del remitente | [@Jo-anny](https://github.com/Jo-anny) | [#171](https://github.com/ericmt-98/micopay-protocol/pull/171) ✅ | Mergeado — Europa → LATAM |
+| V-14 · Modelo mental de stablecoin | [@Max-Owolabi](https://github.com/Max-Owolabi) | [#170](https://github.com/ericmt-98/micopay-protocol/pull/170) ✅ | Mergeado — Nigeria (África Occidental) |
 
-> Los 5 argumentos SDF tienen cobertura. Issues abiertos: V-11, V-14, V-15.
+> Los 5 argumentos SDF tienen cobertura. Issues abiertos: V-11, V-15.
 
 ---
 
@@ -332,7 +353,7 @@ Las respuestas ya abarcan 6+ países en 3 continentes (LATAM, Sur de Asia, Áfri
 - **Primera persona:** cada entrada refleja la experiencia propia del contribuidor — no una encuesta a terceros.
 - **Muestra por conveniencia**, auto-seleccionada a través del programa Stellar Drips Wave 6. Señal direccional y cualitativa, no representativa estadísticamente.
 - **Privacy-first:** sin nombres, sin datos de contacto, sin montos de dinero, sin direcciones de wallet.
-- Tamaño actual de la muestra: **N=15 perspectivas individuales** en **7+ países / 3 regiones**.
+- Tamaño actual de la muestra: **N=16 perspectivas individuales** en **7+ países / 3 regiones**.
 - Reportar `N` con claridad. Dejar que la consistencia de los patrones entre regiones hable por sí sola.
 
 ---

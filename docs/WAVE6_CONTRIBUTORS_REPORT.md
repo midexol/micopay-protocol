@@ -27,9 +27,10 @@
 | [#169](https://github.com/ericmt-98/micopay-protocol/pull/169) | [@DevSolex](https://github.com/DevSolex) | #133 | V-3 · Liquidity provider perspective | Nigeria (West Africa) | ✅ Merged |
 | [#171](https://github.com/ericmt-98/micopay-protocol/pull/171) | [@Jo-anny](https://github.com/Jo-anny) | #166 | V-13 · Remittance sender context | Europe → Latin America | ✅ Merged |
 | [#173](https://github.com/ericmt-98/micopay-protocol/pull/173) | [@Oluwasuyi-Timilehin](https://github.com/Oluwasuyi-Timilehin) | #165 | V-12 · Living unbanked — daily cash management | Mexico (CDMX) | ✅ Merged |
+| [#170](https://github.com/ericmt-98/micopay-protocol/pull/170) | [@Max-Owolabi](https://github.com/Max-Owolabi) | #167 | V-14 · Stablecoin / digital peso mental model | Nigeria (West Africa) | ✅ Merged |
 
-**Total responses: N=15** (V-1, V-2, V-3, V-4, V-5, V-12, V-13 first-person + 1 multi-respondent batch in V-10 + 3 first-person V-6/V-8/V-9 + 3 implicit in V-7 batch)
-**Regions represented:** Nigeria (×4), Mexico (×2), Colombia, Argentina, Venezuela, India, Europe
+**Total responses: N=16** (V-1, V-2, V-3, V-4, V-5, V-12, V-13, V-14 first-person + 1 multi-respondent batch in V-10 + 3 first-person V-6/V-8/V-9 + 3 implicit in V-7 batch)
+**Regions represented:** Nigeria (×5), Mexico (×2), Colombia, Argentina, Venezuela, India, Europe
 
 ---
 
@@ -227,6 +228,25 @@ Each contribution advances one or more of the five claims in our funding narrati
 
 ---
 
+### V-14 · Stablecoin / digital peso mental model
+**Contributor:** [@Max-Owolabi](https://github.com/Max-Owolabi) · **PR:** [#170](https://github.com/ericmt-98/micopay-protocol/pull/170) · **Merged:** 2026-06-26
+
+**Format:** First-person, single respondent.
+
+**Region:** Nigeria (West Africa)
+
+**Key findings:**
+
+- **Prior stablecoin experience:** Yes — USDC and USDT on Stellar and other networks, obtained via local exchange agents and P2P platforms. Used primarily to hedge against local currency inflation and pay for digital services where local cards fail.
+- **Mental model vs physical cash:** Initially abstract ("a number on a screen"). Trust built through: ability to convert back to fiat, global payment utility, smart contract security, on-chain transaction transparency.
+- **Hardest part to understand:** Gas/network fees, multi-chain differences for the same token (Stellar vs Ethereum), and self-custody key management without a bank password reset.
+- **Reaction to "your funds are in a digital wallet":** Curiosity + caution — safer from physical theft, but fears digital hacking or key loss without clear recovery options.
+- **Cash equivalence trigger:** Guaranteed instant conversion to cash at any local corner store, no high fees, and clear in-app escrow confirmation.
+
+**SDF narrative contribution:** Validates Claim 4 (Stellar is usable) from an inflationary market. Stablecoins are already valued as a real tool in West Africa — the gap is the last-mile cash conversion and key recovery UX, which is exactly what MicoPay's local agent + escrow model addresses.
+
+---
+
 ### V-12 · Living unbanked — everyday context
 **Contributor:** [@Oluwasuyi-Timilehin](https://github.com/Oluwasuyi-Timilehin) · **PR:** [#173](https://github.com/ericmt-98/micopay-protocol/pull/173) · **Merged:** 2026-06-26
 
@@ -322,8 +342,9 @@ Responses now span 6+ countries across 3 continents (LATAM, South Asia, Africa).
 | V-5 · Trust in the flow | [@Truphile](https://github.com/Truphile) | [#158](https://github.com/ericmt-98/micopay-protocol/pull/158) ✅ | Merged — Nigeria (West Africa) |
 | V-12 · Living unbanked | [@Oluwasuyi-Timilehin](https://github.com/Oluwasuyi-Timilehin) | [#173](https://github.com/ericmt-98/micopay-protocol/pull/173) ✅ | Merged — Mexico (CDMX) |
 | V-13 · Remittance sender context | [@Jo-anny](https://github.com/Jo-anny) | [#171](https://github.com/ericmt-98/micopay-protocol/pull/171) ✅ | Merged — Europe → LATAM |
+| V-14 · Stablecoin mental model | [@Max-Owolabi](https://github.com/Max-Owolabi) | [#170](https://github.com/ericmt-98/micopay-protocol/pull/170) ✅ | Merged — Nigeria (West Africa) |
 
-> All five SDF claims now have coverage. Open issues: V-11, V-14, V-15.
+> All five SDF claims now have coverage. Open issues: V-11, V-15.
 
 ---
 
@@ -332,7 +353,7 @@ Responses now span 6+ countries across 3 continents (LATAM, South Asia, Africa).
 - **First-person** entries reflect each contributor's own lived experience — not a survey of others.
 - **Convenience sample**, self-selected via Stellar Drips Wave 6. Directional and qualitative, not statistically representative.
 - **Privacy-first:** no names, no contact information, no transaction amounts, no wallet addresses.
-- Current sample size: **N=15 individual perspectives** across **7+ countries / 3 regions**.
+- Current sample size: **N=16 individual perspectives** across **7+ countries / 3 regions**.
 - Report `N` plainly. Let the cross-regional consistency of the patterns speak for itself.
 
 ---

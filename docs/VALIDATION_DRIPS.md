@@ -259,7 +259,14 @@ _(no responses yet)_
 - **What would make me switch?:** A cheaper, faster, and more transparent service with a reliable, immediate local cash-out path. The one thing that would have to be better is certainty: knowing the final amount received and the cash-out option before I send.
 
 ### V-14 · Stablecoin / digital peso mental model
-_(no responses yet)_
+**Contributor:** [@Max-Owolabi](https://github.com/Max-Owolabi) · **PR:** [#170](https://github.com/ericmt-98/micopay-protocol/pull/170)
+
+- **Country / general region:** Nigeria (West Africa)
+- **Have you ever held or used a digital stablecoin?:** Yes. I have held and used USDC and USDT on Stellar and other networks. I obtained them by purchasing through local exchange agents or peer-to-peer (P2P) platforms, and I used them to preserve value against local currency inflation and to pay for digital services online where local cards fail.
+- **How did you think about it compared to physical cash?:** Initially, it felt like an abstract number on a screen rather than "real money" since I couldn't physically spend it at local shops. However, knowing that I could convert it back to local fiat cash or use it for global payments built my trust. The smart contract locking mechanisms and transparent on-chain transactions also made it feel secure.
+- **What was the hardest part to understand about holding a digital token?:** The hardest part to understand initially was the gas/network fees concept, the difference between different blockchain networks (e.g., Stellar vs. Ethereum) for the same stablecoin, and managing self-custody keys without a centralized bank to reset passwords.
+- **If someone told you "your pesos/funds are now in a digital wallet on your phone," what would be your first reaction?:** My first reaction would be a mix of curiosity and slight caution. I would feel the money is safe from physical theft, but potentially at risk of digital hacking or user error (losing keys) unless the wallet provides clear, simplified security and recovery options.
+- **What would make a digital peso/stablecoin feel as reliable as cash in your hand?:** It would feel as reliable as cash if there was a guaranteed, instant way to convert it to physical cash at any local corner store without high fees or complex steps, alongside a clear in-app balance showing that the funds are secured by an escrow contract.
 
 ### V-15 · First-time trust threshold
 _(no responses yet)_

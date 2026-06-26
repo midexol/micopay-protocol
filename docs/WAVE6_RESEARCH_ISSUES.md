@@ -43,7 +43,7 @@
 | V-11 | [#164](https://github.com/ericmt-98/micopay-protocol/issues/164) | Failed transaction / dispute | Trust recovery after failure | 🆕 Open |
 | V-12 | [#165](https://github.com/ericmt-98/micopay-protocol/issues/165) | Living unbanked | Core demand — bank-free users | ✅ PR #173 · @Oluwasuyi-Timilehin |
 | V-13 | [#166](https://github.com/ericmt-98/micopay-protocol/issues/166) | Remittance sender | Cross-border demand (sender side) | ✅ PR #171 · @Jo-anny |
-| V-14 | [#167](https://github.com/ericmt-98/micopay-protocol/issues/167) | Stablecoin / digital peso mental model | Stellar stablecoin layer trust | 🆕 Open |
+| V-14 | [#167](https://github.com/ericmt-98/micopay-protocol/issues/167) | Stablecoin / digital peso mental model | Stellar stablecoin layer trust | ✅ PR #170 · @Max-Owolabi |
 | V-15 | [#168](https://github.com/ericmt-98/micopay-protocol/issues/168) | First-time trust threshold | PMF — first adoption barrier | 🆕 Open |
 
 ## After answers come in
