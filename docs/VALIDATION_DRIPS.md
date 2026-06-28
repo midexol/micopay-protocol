@@ -276,7 +276,27 @@ Aggregate signal:
 - **What would make a digital peso/stablecoin feel as reliable as cash in your hand?:** It would feel as reliable as cash if there was a guaranteed, instant way to convert it to physical cash at any local corner store without high fees or complex steps, alongside a clear in-app balance showing that the funds are secured by an escrow contract.
 
 ### V-15 · First-time trust threshold
-_(no responses yet)_
+**Contributor:** [@abdullahilateefat03-boop](https://github.com/abdullahilateefat03-boop) · **PR:** [#185](https://github.com/ericmt-98/micopay-protocol/pull/185)
+
+**1. Think of the last time you tried a new financial service or app for the first time. What made you decide to try it?**
+
+The last time I tried a new financial app was because I needed a faster and more convenient way to receive and send payments. I had already heard about it from people around me, and it seemed to solve a problem I was experiencing with my previous payment method. The combination of convenience and the growing number of people using it made me decide to give it a try.
+
+**2. What was the single thing that most reduced your hesitation?**
+
+The biggest factor was a recommendation from someone I trusted who had already used the service successfully. Knowing that someone I knew had a positive experience made me feel much more comfortable than advertisements or promotional messages alone.
+
+**3. For a P2P cash service specifically (one where you hand cash to a local person you don't know), what would you need to see before attempting it for the first time?**
+
+Before using a service like that, I would want to see strong identity verification, visible user ratings from previous transactions, and a clear dispute resolution process. I would also want confidence that the platform actively monitors transactions and provides support if something goes wrong. Those trust signals would make me much more willing to try it for the first time.
+
+**4. What is the one thing that would make you walk away before even trying?**
+
+I would immediately walk away if the platform lacked user verification or encouraged completing transactions outside its official process. If I felt there were no safeguards or accountability, I wouldn't be comfortable trusting the service with my money.
+
+**5. After your first successful transaction with a new service, what would make you tell a friend about it?**
+
+If the entire experience was smooth, secure, and exactly as the platform promised, I would gladly recommend it. A simple onboarding process, reliable transaction completion, and the confidence that my issue would be resolved if anything went wrong would make me comfortable suggesting it to friends.
 
 ---
 
