@@ -6,7 +6,7 @@
 
 > 🌊 **We're in Drips Wave 6 — start here.** The focus is turning the retail mobile app (`micopay/frontend` + `micopay/backend`) from a single-device demo into a **real product**: one identity per device and a **real transaction between two phones**. **Contributors: read [`docs/AUDIT_APK_WAVE6.md`](./docs/AUDIT_APK_WAVE6.md)** — it's the Wave 6 source of truth (plan, issue queue, and acceptance criteria). Then jump to [Contributing](#contributing-drips-wave-6) · [`docs/`](./docs/)
 
-> 🔐 **Real-World ZK on Stellar — ZKaaS, live on testnet.** Through the **Zero-Knowledge proof hackathon** MicoPay shipped **ZKaaS**: anonymous, pay-per-use ZK verification on Soroban. You can prove *"my reputation tier is ≥ GOLD"* without revealing who you are — verified on-chain. See [ZK-as-a-Service](#-zk-as-a-service-zkaas) below.
+> 🔐 **Real-World ZK on Stellar — live on testnet.** AI agents buy an **anonymous access credential** (x402) and spend it to consume resources like **Claude inference** — proving *"I have the right to consume this"* without revealing who they are or linking the spend to the purchase. Single-use, verified on-chain on Soroban. See [ZK-as-a-Service](#-zk-as-a-service--private-resource-access-for-ai-agents) below · [`docs/zk-agent-credentials/`](./docs/zk-agent-credentials/STATUS.md).
 
 ---
 
@@ -98,37 +98,49 @@ The architecture is designed so that once the relayer is live, any agent on any 
 
 ---
 
-## 🔐 ZK-as-a-Service (ZKaaS)
+## 🔐 ZK-as-a-Service — Private resource access for AI agents
 
-> **Heading into the upcoming Real-World ZK on Stellar hackathon — and already live on testnet.**
+> **Real-World ZK on Stellar — live on testnet.** Full docs: [`docs/zk-agent-credentials/`](./docs/zk-agent-credentials/STATUS.md).
 
-MicoPay's reputation used to be public: exact scores and badges tied to your Stellar address. That's surveillance. ZKaaS adds the **private mode**: prove a claim about yourself without revealing your identity, address, or history.
+**Prove you have the right to consume a resource — without revealing who you are or linking your activity.** AI agents buy an **anonymous access credential** and spend it to consume resources (e.g. Claude inference). The payment is public; the spend is anonymous and **unlinkable to the purchase** — verified with zero-knowledge on Soroban.
 
-**Your reputation, your choice — flaunt it publicly (badge) or prove it privately (ZK).**
+This is exactly Stellar's thesis (*"open by default, private when needed"*): a real financial claim proven on-chain without leaking the sensitive part.
 
-ZKaaS is a generic, pay-per-use zero-knowledge verification service: a single Soroban contract (`ZkVerifierRegistry`) holds a registry of audited verification keys, and any agent pays cents via x402 to verify a Noir/UltraHonk proof on-chain.
+### The pipeline — three pieces, none replaces another
+
+```
+BUY    POST /api/v1/credentials/buy   (x402, PUBLIC payment)
+       → issue an anonymous credential + activate its Merkle root on-chain
+            │
+SPEND  POST /api/v1/inference          (credential + ZK, ANONYMOUS)
+       → ZK proof "I hold a valid, unspent credential" → burn its nullifier
+         on-chain → Claude responds
+```
+
+- **x402** = how you pay (public — a payment has nothing to hide).
+- **credential** = the prepaid ticket (a secret whose commitment lives in the tree).
+- **ZK** = makes the spend anonymous + unlinkable, and the on-chain **nullifier** makes each credential **single-use** (anti-spam / no over-consumption).
+
+Even MicoPay can't link a spend back to a purchase (you can't go from `H(secret)` to the commitment without the secret).
 
 ### Verified on-chain (Stellar testnet)
 
-- **Contract `ZkVerifierRegistry`:** `CC6YHSKDTINV4XSZNVT42XW4GPJIANNKNNKG73HYTO2OJ7DPF55A33UG`
-- **Demo B — anonymous reputation:** alice proved *tier ≥ SILVER* (she's GOLD) **without revealing her identity**. Verified on-chain, tx [`330be3e4…02974`](https://stellar.expert/explorer/testnet/tx/330be3e4eae61901526206d33438e38e5b90a65d16871ef1727d5bc075902974)
+- **Contract `ZkVerifierRegistry`:** `CBOWU3OVOPGN3ME2R7EFK2Z2JZY4XYRB6A3HBTQ2Q2WWPSXK3VREUQC7`
+- **End-to-end demo:** buy a credential via x402 → generate its ZK proof → `POST /api/v1/inference` → **real Claude completion** (`credential_spent: true`). Re-spending the same credential → `409 NullifierAlreadyUsed` (burn-once proven on-chain).
 
-### Two registered circuits
+### Three registered circuits
 
 | Circuit | What it proves | Role |
 |---|---|---|
-| `poseidon_preimage` | "I know the secret behind this hash" — without revealing it | Building block for HTLC coordination and cross-chain swaps |
-| `reputation_v1` 🏆 | "My reputation tier is ≥ T" — without revealing identity, address, or exact score | **Flagship.** Private reputation earned in MicoPay, consumed by merchants and AI agents |
+| `access_credential_v1` 🏆 | "I hold a valid, unspent credential in this set" — without revealing which, who I am, or linking my uses | **Flagship.** Burn-once anonymous access (Merkle membership + single-use nullifier). |
+| `reputation_v1` | "My reputation tier is ≥ T" — without revealing identity, address, or exact score | Same engine, leaf = tier. Private reputation as an access credential. |
+| `poseidon_preimage` | "I know the secret behind this hash" — without revealing it | Building block for HTLC coordination and cross-chain swaps. |
 
 ### Why a VK registry (not one contract per circuit)
 
-UltraHonk verification is bound to a circuit via its verification key. A registry keyed by `circuit_id` makes ZKaaS an actual *service*: new circuits are **registered, not redeployed**. It's also the security boundary — the API never accepts a caller-supplied VK (that would let an attacker forge `verified: true` with a trivial circuit). Only the admin registers audited VKs.
+UltraHonk verification is bound to a circuit via its verification key. A registry keyed by `circuit_id` makes ZKaaS an actual *service*: new circuits are **registered, not redeployed**. It's also the security boundary — the API never accepts a caller-supplied VK (that would let an attacker forge `verified: true` with a trivial circuit). Only the admin registers audited VKs. **One engine, many businesses:** the same membership+nullifier circuit serves inference access, compliance/KYC, ticketing, anti-sybil — only the meaning of the leaf changes.
 
-### The agent use case
-
-> An AI agent pays **$0.001** to verify that an anonymous counterparty has good reputation *before* locking funds in escrow — without doxxing anyone. Trust, bought autonomously, on-chain.
-
-Built with **Noir + UltraHonk (barretenberg)**, verified inside Soroban via the BN254/Poseidon host functions (Protocol 25/26). Full spec: [`docs/ZK-as-a-Service/README.md`](./docs/ZK-as-a-Service/README.md) · toolchain pins: [`TOOLCHAIN.md`](./TOOLCHAIN.md).
+Built with **Noir + UltraHonk (barretenberg)**, verified inside Soroban via the BN254 host functions (`g1_msm`, `pairing_check` — Protocol 25/26). Hash is BN254 **Pedersen** (Poseidon isn't exported in nargo 1.0.0-beta.9; on-chain verification is hash-agnostic). Status & backlog: [`docs/zk-agent-credentials/STATUS.md`](./docs/zk-agent-credentials/STATUS.md) · value: [`VALUE_PROP.md`](./docs/zk-agent-credentials/VALUE_PROP.md) · toolchain pins: [`TOOLCHAIN.md`](./TOOLCHAIN.md).
 
 ---
 
@@ -223,6 +235,8 @@ curl -X POST http://localhost:3000/api/v1/demo/run
 | Send private quote | `POST /api/v1/bazaar/quote` | $0.002 | Direct negotiation channel between agents |
 | Initiate cash exchange | `POST /api/v1/cash/request` | $0.01 | HTLC lock on Soroban + QR generation + merchant notification |
 | Verify ZK proof | `POST /api/v1/zk/verify` | $0.001 | On-chain UltraHonk verification — prove reputation/knowledge without revealing identity |
+| Buy access credential | `POST /api/v1/credentials/buy` | $0.01 | x402 → issue an anonymous, single-use access credential (activates its root on-chain) |
+| Consume inference | `POST /api/v1/inference` | credential | Spend a credential (ZK proof + nullifier burn) → Claude responds — anonymous, unlinkable to the purchase |
 | Fund MicoPay | `POST /api/v1/fund` | $0.10 | Meta-demo: the protocol funds itself |
 | Service discovery | `GET /api/v1/services` | free | Full catalog with prices, examples, and why_pay explanations |
 | Agent skill | `GET /skill.md` | free | SKILL.md for Claude / OpenAI tool use autodiscovery |
@@ -356,7 +370,7 @@ cd micopay/contracts/escrow && cargo test
 - `MicopayEscrow`: `CBQINHLR3M7NZAPQY7EJ3TWOE22R57LMFDVEMOK3C3X7ZIBFWHVQQP3A`
 - `AtomicSwapHTLC A`: `CCDOUXIXSFXT2HTJAJGFNUJN6CKCYX2M6AL2BHHPEF6ISNHP2BGLS4KX`
 - `AtomicSwapHTLC B`: `CBLCGG44QQILWEIVBXDSZSLH7NI7SGJQKXQ7WTKP3W3YSXOBTGMZKSNN`
-- `ZkVerifierRegistry`: `CC6YHSKDTINV4XSZNVT42XW4GPJIANNKNNKG73HYTO2OJ7DPF55A33UG` — ZKaaS, 2 circuits registered (`poseidon_preimage` + `reputation_v1`)
+- `ZkVerifierRegistry`: `CBOWU3OVOPGN3ME2R7EFK2Z2JZY4XYRB6A3HBTQ2Q2WWPSXK3VREUQC7` — ZKaaS, 3 circuits registered (`access_credential_v1` + `reputation_v1` + `poseidon_preimage`)
 
 ### AtomicSwapHTLC — `contracts/atomic-swap`
 
