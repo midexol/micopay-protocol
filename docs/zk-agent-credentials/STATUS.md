@@ -76,7 +76,7 @@ curl -s -X POST localhost:3000/api/v1/inference -H 'Content-Type: application/js
 
 | # | Pendiente | Por qué importa | Esfuerzo |
 |---|---|---|---|
-| 1 | **Árbol multi-usuario** (varias hojas bajo una raíz) | Hoy el anonimato del demo es 1 (1 hoja por raíz) → poco creíble | Medio (Merkle multi-hoja vía nargo) |
+| ~~1~~ | ~~**Árbol multi-usuario**~~ ✅ **HECHO (2026-06-28)** | Pool de 4 credenciales bajo UNA raíz compartida, cada una con su ruta Merkle real; raíz publicada una sola vez → varias credenciales activas a la vez. Verificado e2e: 2 credenciales distintas del mismo árbol gastadas OK. Anonymity set = 4. | — |
 | 2 | **Commitment generado por el cliente** | Hoy el emisor (MicoPay) conoce el secreto → la no-ligabilidad frente al emisor no es total | Medio (proving cliente + el server solo recibe `H(secret)`) |
 | 3 | **Saldo privado** ("cuánto le queda", range proof) | La forma más pura de "probar una verdad numérica ocultando el número" | Alto (circuito nuevo) |
 | 4 | **Set = pagos x402** (sin emisor de confianza) | "soy uno de los que pagaron" sin emisor → el escalón que impresiona | Alto |
@@ -87,10 +87,10 @@ curl -s -X POST localhost:3000/api/v1/inference -H 'Content-Type: application/js
 ## Caveats honestos (no engañarnos)
 
 - **Demo, no negocio probado.** Es activo de hackathon + infraestructura + posicionamiento.
-- **Credencial server-minted** en el demo (ver pendiente #2 para la no-ligabilidad total).
-- **Contrato de raíz única** → una credencial activa a la vez (ver pendiente #1).
-- **Nit de timing:** el cross-check de raíz en el gasto puede ir ~segundos atrás de la compra
-  (snapshot del RPC) → reintentar. Producción: esperar finalidad o reintentar.
+- **Credencial server-minted** en el demo (ver pendiente #2 para la no-ligabilidad total frente al emisor).
+- **Anonymity set = 4** (pool demo de 4 credenciales bajo una raíz). Producción: árbol grande.
+- **Nit de timing:** el cross-check de raíz en el gasto puede ir ~segundos atrás de la primera
+  compra (snapshot del RPC) → reintentar. Producción: esperar finalidad o reintentar.
 
 ---
 
