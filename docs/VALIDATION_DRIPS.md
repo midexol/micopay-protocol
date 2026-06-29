@@ -392,6 +392,34 @@ More likely. The seed phrase requirement is the single biggest drop-off point fo
 
 ---
 
+### V-19 · Freelancer / remote worker paid by clients abroad
+**Contributor:** [@Thoni76](https://github.com/Thoni76) · **PR:** #292 · **Issue:** [#234](https://github.com/ericmt-98/micopay-protocol/issues/234) · **Region:** LATAM
+
+First-person response (privacy-safe):
+
+- **How clients/employers abroad pay you today:** I get paid mostly via Wise (which deposits into my local bank) and occasionally via direct crypto (USDC) to a self-custodial wallet for tech-savvy clients.
+- **What's the worst part of receiving that money:** The worst part is the unpredictability. With traditional platforms, there are intermediary bank fees that appear out of nowhere, and the exchange rate used is typically lower than the real market rate. For crypto, having to navigate P2P exchanges to get local fiat is stressful due to scams and the risk of my local bank freezing my account for P2P transfers.
+- **Roughly what share of the payment is lost to fees + exchange spread combined:** I lose about 5% to 8% overall, sometimes more if the transaction is small due to flat wire fees.
+- **Would receiving "dollars" you could then cash out locally or spend at a store solve a real problem for you? Which part matters most:** Yes, absolutely. Cost predictability and certainty of the final local value matter most. If I receive exactly the agreed dollar amount and can convert it to local currency on demand at a transparent rate, it removes all the stress of hidden spread margins and bank delays.
+- **What would make you not trust getting paid this way:** I wouldn't trust it if the off-ramp to local currency was run by unverified individuals rather than trusted local shops, or if there were hidden fees during the cash-out process.
+
+**SDF narrative:** Confirms that remote workers in LATAM face a 5-8% friction and high unpredictability using current rails. The primary demand driver for dollar-inflow (Vertical C) is certainty of the final local value and a safe, reliable cash-out path without the risk of bank freezes.
+
+---
+
+### V-23 · Peso vs dollar — what you prefer to hold
+**Contributor:** [@Danitello123](https://github.com/Danitello123) · **PR:** #286 · **Region:** South America
+
+First-person response (privacy-safe):
+
+- **In your country/region, when you have money you don't need right now, do you prefer to keep it in your local currency, in dollars, or something else? Why?**: In my region (South America), I strongly prefer to keep money in dollars (or USD-pegged stablecoins) for savings, and only keep what I need for the week in local currency. The local currency loses purchasing power too quickly.
+- **Has inflation or devaluation ever changed how you store money? What did you do?**: Yes. After seeing savings lose value over a few months, I shifted my strategy entirely. I started converting my salary to stablecoins or physical dollars immediately upon receiving it.
+- **If an app let you hold "dollars" but spend and cash out in your local currency automatically, would you trust the conversion happening behind the scenes — or would you want to see and control the rate?**: I would want to see and control the rate, or at least have a very clear, transparent exchange rate shown before any transaction. Hidden spreads are a major concern, so trusting an invisible conversion is difficult.
+- **Would you rather the app show your balance in dollars, in your local currency, or let you switch?**: I would strongly prefer the ability to switch, but my default view would be dollars. It helps me know my true purchasing power, while switching to local currency helps when I need to make a specific local purchase.
+- **What would make you distrust a "digital dollar" or "digital peso" — what would make it feel as real as cash?**: I would distrust it if the app frequently went down during high volatility, or if withdrawals were paused. It feels as real as cash when I can instantly and seamlessly convert it to local currency and withdraw it at a local agent or ATM without jumping through hoops.
+
+---
+
 ## How findings feed Wave 6 product work
 
 - Cash-out vs cash-in vs remittance demand → which direction to prioritize first.
