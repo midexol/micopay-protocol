@@ -11,6 +11,7 @@ export interface TradeConfirmationPageProps {
   amountMxn: number;
   flow: 'cashout' | 'deposit';
   nearbyCount: number;
+  merchantOnline?: boolean;
   onBack: () => void;
   onConfirm: () => Promise<boolean>;
   loading?: boolean;
@@ -24,6 +25,7 @@ export default function TradeConfirmationPage({
   amountMxn,
   flow,
   nearbyCount,
+  merchantOnline = true,
   onBack,
   onConfirm,
   loading = false,
@@ -100,9 +102,9 @@ export default function TradeConfirmationPage({
 
             <div className="flex justify-between gap-4 border-t border-outline-variant/15 pt-3">
               <dt className="text-on-surface-variant">Estado del agente</dt>
-              <dd className="flex items-center gap-1.5 text-green-700 font-medium">
-                <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
-                En línea
+              <dd className={`flex items-center gap-1.5 font-medium ${merchantOnline ? 'text-green-700' : 'text-red-600'}`}>
+                <span className={`w-2 h-2 rounded-full inline-block ${merchantOnline ? 'bg-green-500' : 'bg-red-500'}`} />
+                {merchantOnline ? 'En línea' : 'Sin conexión'}
               </dd>
             </div>
 
@@ -118,7 +120,7 @@ export default function TradeConfirmationPage({
         <button
           type="button"
           disabled={loading}
-          onClick={() => { onConfirm(); }}
+          onClick={async () => { await onConfirm(); }}
           className="w-full rounded-xl bg-primary py-3.5 text-sm font-semibold text-on-primary shadow-md hover:opacity-95 disabled:opacity-50 transition-opacity"
         >
           {loading ? 'Creando operación…' : 'Confirmar'}

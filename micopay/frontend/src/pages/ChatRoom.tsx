@@ -249,10 +249,11 @@ const ChatRoom = ({
                     <div className="grid grid-cols-1 gap-3 mt-4">
                         {isProvider && escrowStatus === 'locked' && (
                             <button
+                                onClick={onViewQR}
                                 className="flex items-center justify-center gap-3 w-full h-[46px] rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
                             >
-                                <span className="material-symbols-outlined">payments</span>
-                                <span className="font-body text-sm">Deliver Cash</span>
+                                <span className="material-symbols-outlined">qr_code_scanner</span>
+                                <span className="font-body text-sm">Escanear QR del cliente</span>
                             </button>
                         )}
                         <button className="flex items-center justify-center gap-3 w-full h-[46px] rounded-lg bg-surface-container-highest text-primary font-semibold hover:bg-surface-variant transition-colors group">

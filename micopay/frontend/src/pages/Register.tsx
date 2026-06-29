@@ -55,14 +55,14 @@ export default function Register() {
     setTimeout(() => setCopiedPub(false), 2000);
   };
 
-  const copySecretKey = async () => {
+  const copySecretKey = () => {
     navigator.clipboard.writeText(secretKey);
     setCopiedSec(true);
-    await setBackupConfirmed();
     setTimeout(() => setCopiedSec(false), 2000);
   };
 
-  const finishOnboarding = () => {
+  const finishOnboarding = async () => {
+    await setBackupConfirmed();
     navigate('/login', { replace: true });
   };
 

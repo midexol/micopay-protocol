@@ -214,6 +214,7 @@ function MapRoute() {
                 amountMxn: activeAmount,
                 flow: 'cashout',
                 nearbyCount: offer.nearbyCount,
+                merchantOnline: offer.online,
               },
             });
           }}
@@ -244,6 +245,7 @@ function ConfirmRoute() {
     amountMxn: number;
     flow: 'cashout' | 'deposit';
     nearbyCount: number;
+    merchantOnline?: boolean;
   } | null;
 
   if (!state?.merchantId) {
@@ -259,6 +261,7 @@ function ConfirmRoute() {
       amountMxn={state.amountMxn}
       flow={state.flow ?? 'cashout'}
       nearbyCount={state.nearbyCount}
+      merchantOnline={state.merchantOnline ?? true}
       loading={tradeLoading}
       errorMessage={tradeError?.message ?? null}
       onBack={() => navigate(-1)}

@@ -49,6 +49,7 @@ export interface OfferConfirmData {
   receiveMxn: number;
   commissionPct: number;
   nearbyCount: number;
+  online: boolean;
 }
 
 interface ExploreMapProps {
@@ -217,6 +218,7 @@ const ExploreMap = ({
                               receiveMxn: offer.receiveMxn,
                               commissionPct: offer.commissionPct,
                               nearbyCount: offers.length,
+                              online: offer.online ?? true,
                             });
                           } else {
                             onSelectOffer(offer.id);
@@ -279,6 +281,7 @@ const ExploreMap = ({
                             receiveMxn: offer.receiveMxn,
                             commissionPct: offer.commissionPct,
                             nearbyCount: offers.length,
+                            online: offer.online ?? true,
                           });
                         } else {
                           onSelectOffer(offer.id);
